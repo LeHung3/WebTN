@@ -1,4 +1,4 @@
-var registeredUsers = [];
+var registeredUsers=JSON.parse(localStorage.getItem("data"));
 function registerUser (username, email, password) {
     var newUser = {
         username: username,
@@ -20,13 +20,11 @@ function validateRegistration (username, email) {
     return true; // Thông tin đăng ký hợp lệ
 }
 document.getElementById("registerForm").addEventListener("submit", function(event){
-    //event.preventDefault(); // Prevent default form submission
+    event.preventDefault()
     var username = document.getElementById("registerUsername").value;
     var email = document.getElementById("registerEmail").value;
     var password = document.getElementById("registerPassword").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
-    console.log(1)
-    // Validate registration info (demo)
     if(password !== confirmPassword){
       alert("Passwords do not match. Please try again.");
       return;
@@ -35,11 +33,10 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         alert("Account already exists.");
       return;
     }
-    // Perform registration (demo)
     else{
         alert("Registration successful!");
         registerUser(username,email,password)
-        var arrayString = JSON.stringify(registeredUsers);
-        localStorage.setItem('data', arrayString);
+        var jsonRegisteredUsers = JSON.stringify(registeredUsers);
+        localStorage.setItem('data', jsonRegisteredUsers);
     }
 });
