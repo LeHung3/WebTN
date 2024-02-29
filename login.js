@@ -1,6 +1,7 @@
 
 function checkLogin (username,password, registeredUsers) {
     //check length truoc
+    if (registeredUsers.length() == 0) alert("Tai khoan chua duoc dang ky!")
     for (var i = 0; i < registeredUsers.length; i++) {
         if(username === registeredUsers[i].username && password === registeredUsers[i].password){
             alert("Login successful!");
