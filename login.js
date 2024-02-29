@@ -1,5 +1,6 @@
 
 function checkLogin (username,password, registeredUsers) {
+    //check length truoc
     for (var i = 0; i < registeredUsers.length; i++) {
         if(username === registeredUsers[i].username && password === registeredUsers[i].password){
             alert("Login successful!");
