@@ -43,3 +43,4 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         localStorage.setItem('data', arrayString);
     }
 });
+// aaaa
