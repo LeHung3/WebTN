@@ -1,10 +1,9 @@
-
 async function registerUser(username, email, password) {
     var registeredUsers = JSON.parse(localStorage.getItem("data")) || [];
     var newUser = {
         username: username,
         email: email,
-        password: password
+        password: password,
     };
     console.log('🚀 ~ registerUser ~ newUser:', newUser)
     await registeredUsers.push(newUser);
@@ -14,7 +13,7 @@ async function registerUser(username, email, password) {
 }
 function validateRegistration(username, email) {
     var registeredUsers = JSON.parse(localStorage.getItem("data")) || [];
-    if (registeredUsers===null || registeredUsers.length===0) return true
+    if (registeredUsers === null || registeredUsers.length === 0) return true
     // Kiểm tra xem username hoặc email đã được sử dụng chưa
     for (var i = 0; i < registeredUsers.length; i++) {
         if (registeredUsers[i].username === username) {
@@ -26,6 +25,7 @@ function validateRegistration(username, email) {
     }
     return true; // Thông tin đăng ký hợp lệ
 }
+
 document.getElementById("registerForm").addEventListener("submit", async function (event) {
     event.preventDefault()
     var registeredUsers = JSON.parse(localStorage.getItem("data")) || [];
@@ -47,3 +47,4 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         await registerUser(username, email, password)
     }
 });
+

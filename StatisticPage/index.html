@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Statistics</title>
+    <link rel="stylesheet" href="../StatisticPage/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Score Statistics</h1>
+        <div class="filters">
+            <label for="monthSelect">Select Month:</label>
+            <input type="month" id="monthSelect">
+            <label for="examSelect">Select Exam:</label>
+            <select id="examSelect">
+                <option value="all">All Exams</option>
+                <option value="Exam 1">Exam 1</option>
+                <option value="Exam 2">Exam 2</option>
+                <option value="Exam 3">Exam 3</option>
+            </select>
+        </div>
+        <div id="statisticsTable"></div>
+        <button id="exportExcel">Export to Excel</button>
+    </div>
+    <script src="xlsx.full.min.js"></script>
+    <script src="../StatisticPage/script.js"></script>
+</body>
+</html>
