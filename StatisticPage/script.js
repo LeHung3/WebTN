@@ -92,6 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to export data to Excel
     function exportToExcel(data) {
-        alert("Thanh cong!")
+        alert("Success!")
     }
 });

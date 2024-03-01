@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const correctAnswer = Math.floor(Math.random() * 4) + 1; // Random correct answer (1-4)
       const answers = [];
       for (let j = 1; j <= 4; j++) {
-          answers.push({ text: "Đáp án "+String.fromCharCode(64 + j) + ": ", correct: j === correctAnswer });
+          answers.push({ text: "Answer "+String.fromCharCode(64 + j) + ": ", correct: j === correctAnswer });
       }
       questions.push({ question: `Question ${i}`, answers: answers, correctAnswer: String.fromCharCode(64 + correctAnswer) });
   }
@@ -31,12 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
       questions.forEach(question => {
           const questionItem = document.createElement('div');
           questionItem.classList.add('question-item');
+            let x = randomAnswer()
           questionItem.innerHTML = `
               <h3>${question.question}</h3>
               <ul>
-                  ${question.answers.map(answer => `<li>${answer.text} ${answer.correct ? '(Đúng)' : ''}</li>`).join('')}
+                  ${question.answers.map(answer => `<li>${answer.text} ${answer.correct ? '✅' : ''}</li>`).join('')}
               </ul>
-              <p>Câu trả lời của bạn: ${randomAnswer()}</p>
+              <p>Your Answer: ${ x === question.correctAnswer ? x+' ✅' : x+' ❌'}</p>
           `;
           questionList.appendChild(questionItem);
       });
@@ -58,6 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Calculate and display score
   const score = (totalCorrectAnswers / 20) * 10;
   const scoreElement = document.createElement('p');
-  scoreElement.textContent = `Điểm của bạn: ${score*2}/20`;
+  scoreElement.textContent = `Your Score: ${score*2}/20`;
   questionList.insertBefore(scoreElement, questionList.firstChild);
 });

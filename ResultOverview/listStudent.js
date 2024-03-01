@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
       studentDetails.style.display = 'flex';
       const examNames = student.exams.map(exam => exam.name);
       // Redirect to exam page with student id and exam name as query parameters
-      window.location.href = `exam.html?studentName=${student.name}&examName=${examNames[0]}`;
+      window.location.href = `exam.html?studentName=${student.name}&examName=${examName}`;
   }
   // Populate student list on page load
   populateStudentList();
