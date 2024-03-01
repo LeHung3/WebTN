@@ -11,7 +11,6 @@ function checkLogin(username, password) {
 
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default form submission
-    getData()
     var username = document.getElementById("loginUsername").value;
     var password = document.getElementById("loginPassword").value;
     checkLogin(username, password) ? window.location.href = "../Home/home.html" : alert("Invalid username or password. Please try again.")
