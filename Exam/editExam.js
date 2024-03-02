@@ -4,6 +4,7 @@ var exam
 document.getElementById('editExam').addEventListener('submit', function(event) {
     event.preventDefault();
     examId = document.getElementById('examId').value;
+    console.log(examId)
     exam = exams.find(function(item) {
         if(item.examId == examId){
             return item
@@ -212,7 +213,7 @@ document.getElementById('examDetails').addEventListener('submit', function(event
     }
 
     var addExam={
-        examId:examId,
+        examId:parseInt(examId),
         examName:examName,
         description:description,
         examType:examType,
