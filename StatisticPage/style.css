@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #557b83, #39aea9, #a2d5ab, #e5efc1);
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(to bottom, #e5efc1, #a2d5ab, #a2d5ab, #e5efc1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #a2d5ab;
+  border-radius: 5px;
+}
+
+#statisticsTable {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #a2d5ab;
+}
+
+th {
+  background-color: #a2d5ab;
+}
+
+#exportExcel {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: e5efc1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#exportExcel:hover {
+  background-color: #45a049;
+}

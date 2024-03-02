@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8dad0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  /* Khoảng cách từ đỉnh trang */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px;
+    background-color: #f28076;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #666;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* Hiển thị theo chiều dọc */
+  align-items: center;
+  /* Canh giữa theo chiều ngang */
+  border-radius: #666;
+  /* Áp dụng hiệu ứng blur */
+}
+#course-list {
+  width: 100%; /* Đặt chiều rộng */
+  display: flex; /* Hiển thị các ô môn học theo hàng ngang */
+  flex-wrap: wrap; /* Cho phép các ô môn học xuống dòng nếu không đủ không gian */
+  justify-content: center; /* Canh giữa các ô môn học theo chiều ngang */
+}
+
+#logo {
+  margin-bottom: 10px;
+  /* Khoảng cách giữa logo và chữ "Exam List" */
+}

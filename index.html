@@ -4,10 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thi Ptit - Trang Chủ</title>
+    <!-- Link tới Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Tùy chỉnh CSS */
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .main-content {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.8); /* Một lớp nền mờ để tạo sự tương phản với phần nền hình ảnh */
+            padding: 20px; /* Thêm padding để cách lề viền */
+            border-radius: 10px; /* Bo góc cho phần nội dung */
+            
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #dc3545;
+        }
+        .bg-image--left {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            width: 50%;
+            height: 94%; 
+            object-fit: cover; 
+        }
+        .bg-image--right {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 50%;
+            height: 73%; 
+            object-fit: cover; 
+        }
+    </style>
 </head>
 <body>
-    <h1>Chào mừng bạn đến với Thi Ptit</h1>
-    <p>Đây là trang chủ của Thi Ptit. Hãy đăng nhập để bắt đầu!</p>
-    <a href="Login/login.html">Đăng nhập</a>
+    <div class="container">
+        <div class="main-content text-center">
+            <img src="/Bai3WebHTML/assets/ptit.jpg" alt="Logo Thi Ptit" class="logo mb-2">
+            <h1 class="mb-2">Thi Ptit</h1>
+            <p class="">Đây là trang chủ của Thi Ptit. Hãy đăng nhập để bắt đầu!</p>
+            <a href="Login/login.html" class="btn btn-danger mt-3">Đăng nhập</a>
+        </div>
+        <div class="bg-image--left">
+            <img src="https://code.ptit.edu.vn/2020/images/bg_right.png" alt="">
+        </div>
+        <div class="bg-image--right">
+            <img src="https://code.ptit.edu.vn/2020/images/bg_left.png" alt="">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

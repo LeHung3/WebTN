@@ -1,69 +1,75 @@
-const exams = [
-    { name: 'Luyện tập', status: 'free-access' },
-    { name: 'Giữa kỳ', status: 'scheduled', time: '2024-03-01T12:00:00' },
-    // Thêm bài thi khác nếu cần
-  ];
+const exams = JSON.parse(localStorage.getItem("exam")) || []
+
+function getItemExam(exam){
+  const examInfo = document.createElement("div");
+  examInfo.classList.add("exam-info");
+  examInfo.classList.add("exam-list")
   
-  function renderExams() {
-    const examList = document.getElementById('examList');
-  
-    exams.forEach(exam => {
-      const examItem = document.createElement('div');
-      examItem.classList.add('exam-item');
-      examItem.dataset.status = exam.status;
-  
-      const heading = document.createElement('h2');
-      heading.textContent = exam.name;
-  
-      const statusParagraph = document.createElement('p');
-      if (exam.status === 'scheduled') {
-        statusParagraph.textContent = `Trạng thái: Đã lên lịch (${exam.time})`;
-      } else {
-        statusParagraph.textContent = 'Trạng thái: Có thể truy cập tự do';
-      }
-  
-      const startButton = document.createElement('a');
-      startButton.href = '#';
-      startButton.classList.add('start-exam-btn');
-      startButton.textContent = 'Bắt đầu làm';
-      startButton.onclick = () => startExam(exam);
-  
-      examItem.appendChild(heading);
-      examItem.appendChild(statusParagraph);
-      examItem.appendChild(startButton);
-  
-      examList.appendChild(examItem);
-    });
+  examInfo.innerHTML = `<p><strong>Tên bài thi:</strong> ${exam.examName}</p>
+                        <p><strong>Trạng thái:</strong> ${exam.examType}</p>`;
+  if (exam.openTime) {
+      examInfo.innerHTML += `<p><strong>Thời gian:</strong> ${exam.openTime}</p>`;
   }
-  
-  function filterExams() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const examItems = document.querySelectorAll('.exam-item');
-  
-    examItems.forEach(item => {
-      const examName = item.querySelector('h2').innerText.toLowerCase();
-      if (examName.includes(searchTerm)) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
+  const startButton = document.createElement("button");
+  startButton.textContent = "Bắt đầu làm";
+  startButton.classList.add("start-button");
+  startButton.addEventListener("click", () => {
+    startExam(exam)
+  });
+  examInfo.appendChild(startButton)
+  return examInfo
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const examListElement = document.getElementById("examList");
+  exams.forEach(exam => {
+      examListElement.appendChild(getItemExam(exam));
+  });
+});
+
+function filterExams() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  const searchResults = document.getElementById('searchResults');
+  searchResults.innerHTML = ''; // Xóa kết quả tìm kiếm trước đó
+  const matchingExams =exams.filter(exam => exam.examName.toLowerCase().includes(searchInput));
+
+  if (matchingExams.length > 0 && searchInput!="") {
+      matchingExams.forEach(exam => {
+        searchResults.appendChild(getItemExam(exam));
+      });
+  } else {
+      const noResultsMessage = document.createElement('p');
+      noResultsMessage.textContent = 'Không tìm thấy kì thi phù hợp';
+      searchResults.appendChild(noResultsMessage);
   }
+}
   
-  function startExam(exam) {
-    if (exam.status === 'scheduled') {
-      const currentTime = new Date();
-      const scheduledTime = new Date(exam.time);
-  
-      if (currentTime < scheduledTime) {
-        alert(`Bài thi "${exam.name}" chưa mở làm. Vui lòng quay lại vào thời gian đã lên lịch.`);
-        return;
-      }
+function startExam(exam) {
+  if(exam.examType==="Scheduled"){
+    const currentTime = new Date();
+    const scheduledTime = new Date(exam.openTime);
+    if (currentTime < scheduledTime) {
+      alert(`Bài thi "${exam.examName}" chưa mở làm. Vui lòng quay lại vào thời gian đã lên lịch.`);
+    }else{
+      alert(`Bắt đầu làm kỳ thi`);
+      localStorage.setItem("examOnline",JSON.stringify(exam))
+      window.location.href="../TestPage/testPage.html"
+      
     }
-  
-    alert(`Bắt đầu làm kỳ thi: ${exam.name}`);
-    // Redirect to the exam page or handle other logic
+  }else{
+    alert(`Bắt đầu làm kỳ thi`);
+    localStorage.setItem("examOnline",JSON.stringify(exam))
+    window.location.href="../TestPage/testPage.html"
   }
-  
-  // Gọi hàm renderExams để hiển thị danh sách bài thi khi trang được tải
-  window.onload = renderExams;
+  return
+}
+
+function logOut(){
+  window.location.href="../index.html"
+  localStorage.setItem("userLoggedIn",JSON.stringify({}))
+  localStorage.setItem("examOnline",JSON.stringify({}))
+}
+
+function adminPage(){
+  window.location.href="../Dashboard/dashBoard.html"
+}

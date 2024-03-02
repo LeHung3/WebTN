@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kết quả</title>
+
+  <style>
+
+    #formResult {
+      max-width: 95%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: flex;
+   
+      flex-direction: column;
+      justify-content: center; 
+    }
+
+  .question {
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  .question label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  #resultContainer{
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  #result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: 300px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.info {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #050505;
+}
+
+#switch-form{
+  font-size: 16px;
+}
+
+#switch-to-home{
+    font-size: 16px;
+  }
+
+.question-column {
+  
+  flex-direction: column;
+  text-align: left;
+}
+
+.answer-column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.answer-column p{
+  margin: 10px 0 0 0;
+}
+
+.questionResult{
+  margin-top: 20px;
+}
+
+#showAnswerContainer{
+  text-align: left;
+}
+
+ 
+
+  </style>
+</head>
+<body>
+
+  <div id="formResult">
+      <div id="quizContainer" class="quiz-container" >
+        <div id="resultContainer">
+                <div id="result" >
+                  <div class="info" id = "studentId"></div>
+                  <div class="info" id = "score"></div>
+                  <div id="switch-form">
+                    Xem đáp án chi tiết <a href="#" onclick="switchToShowAnswer()">tại đây</a>
+                  </div>
+
+
+                </div>     
+        </div>
+            <div id="showAnswerContainer" style="display:none;">
+              <div id = "questionResult"></div> 
+            </div>
+                 
+                <div id="switch-to-home" style="display: none;">
+                <a href="#" onclick="switchToHome()">Về trang chủ</a>
+                </div> 
+      </div>     
+  </div>
+  
+
+
+
+  <script src="resultTest.js">
+
+    
+  </script>
+</body>
+</html>

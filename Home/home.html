@@ -4,59 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chính</title>
+    <title>Trang chủ</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="home.js"></script>
 </head>
 
 <body>
     <header>
         <div class="header-with-search">
             <div class="header__logo">
-                <img src="ptit.jpg" alt="PTIT Logo">
+                <img src="/Bai3WebHTML/assets/ptit.jpg" alt="PTIT Logo" onclick="window.location.reload()" class="custom-cursor">
             </div>
             <div class="search-bar">
-                <input type="text" class="search-input" id="searchInput" placeholder="tìm kiếm bài thi">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search Exam">
                 <div class="header__search-selection">
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
             </div>
-            <button class="search-button" id="button-addon2" onclick="filterExams()">Tìm kiếm</button>
+            <button class="search-button" id="button-addon2" onclick="filterExams()">Search</button>
+            <div>
+                <button class="logout-button" id="adminButton" style="display: none;" onclick="adminPage()">Admin</button>
+            </div>
+            <button class="logout-button" id="logOut" onclick="logOut()">Thoat</button>
         </div>
-
-
     </header>
-    <div class="exam-item" data-status="free-access">
-        <h2>Luyện tập 1</h2>
-        <p>Trạng thái: Có thể truy cập tự do</p>
-        <a href="#" class="start-exam-btn" onclick="startExam('Luyện tập')">Bắt đầu làm</a>
+    <div class="container">
+        <div id="searchResults"></div>
+        <hr>
+        <h1>Danh sách bài thi</h1>
+        <div id="examList"></div>
     </div>
-    <div class="exam-item" data-status="free-access">
-        <h2>Luyện tập 2</h2>
-        <p>Trạng thái: Có thể truy cập tự do</p>
-        <a href="#" class="start-exam-btn" onclick="startExam('Luyện tập')">Bắt đầu làm</a>
-    </div>
-    <div class="exam-item" data-status="free-access">
-        <h2>Luyện tập 3</h2>
-        <p>Trạng thái: Có thể truy cập tự do</p>
-        <a href="#" class="start-exam-btn" onclick="startExam('Luyện tập')">Bắt đầu làm</a>
-    </div>
-    <div class="exam-item" data-status="free-access">
-        <h2>Bài thi 1</h2>
-        <p>Trạng thái: Có thể truy cập tự do</p>
-        <a href="#" class="start-exam-btn" onclick="startExam('Bài thi 1')">Bắt đầu làm</a>
-    </div>
-    <div class="exam-item" data-status="scheduled" data-time="2024-03-02T15:30:00">
-        <h2>Bài thi 2</h2>
-        <p>Trạng thái: Đã lên lịch (15/03/2024 03:30 PM)</p>
-        <a href="#" class="start-exam-btn" onclick="startExam('Bài thi 2')">Bắt đầu làm</a>
-    </div>
-    <div class="exam-item" data-status="scheduled" data-time="2024-03-01T12:00:00">
-        <h2>Giữa kỳ</h2>
-        <p>Trạng thái: Đã lên lịch (01/04/2024 09:00 PM)</p>
-        <a href="#" class="start-exam-btn" onclick="startExam('Giữa kỳ')">Bắt đầu làm</a>
-    </div>
-    </div>
-    <script src="home.js"></script>
+    <script>
+        var user=JSON.parse(localStorage.getItem('user'))
+        var loggedIn=JSON.parse(localStorage.getItem('userLoggedIn')).userId;
+        var userloggedIn = user.find(function(item) {
+            if(item.userId == loggedIn){
+                return item
+            }
+        });
+        if (userloggedIn.role=="admin") {
+            document.getElementById('adminButton').style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>

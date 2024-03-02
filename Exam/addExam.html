@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo Kỳ thi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2>Tạo kỳ thi</h2>
+    <form id="examForm">
+      <div class="form-group">
+        <label for="examName">Tên kỳ thi:</label>
+        <input type="text" class="form-control" id="examName" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Mô tả:</label>
+        <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="examType">Loại kỳ thi:</label>
+        <select class="form-control" id="examType" onchange="toggleTimePicker()">
+          <option value="Free-access">Free-access</option>
+          <option value="Scheduled">Scheduled</option>
+        </select>
+      </div>
+      <div class="form-group" id="timePickerContainer"></div>
+      <div class="form-group" id="questionContainer"></div>
+      <div class="form-group">
+        <label for="questionCount">Số câu hỏi:</label>
+        <input type="number" class="form-control" id="questionCount" min="1" value="1">
+      </div>
+      <button type="button" class="btn btn-primary" onclick="addQuestions()">Thêm câu hỏi</button>
+      <button type="submit" class="btn btn-success">Lưu kỳ thi</button>
+    </form>
+  </div>
+
+  <script src="addExam.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f8dad0, #ffb6af, #2d99ae, #0c5776, #001c44);
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(to bottom, #fae0c7, #4eb09b, #0c5776,#001c44);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  /* Màu chữ trắng */
+}
+
+.student-list {
+  margin-bottom: 20px;
+}
+
+.student-item {
+  padding: 10px;
+  background-color: #f8dad0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #000000;
+  /* Màu chữ trắng */
+}
+
+.student-item:hover {
+  background-color: #bcfefe;
+}
+
+.student-details {
+  display: none;
+  padding: 20px;
+  background-color: #f8dad0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  /* Màu chữ trắng */
+}
