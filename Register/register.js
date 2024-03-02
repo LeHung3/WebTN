@@ -1,4 +1,16 @@
 var registeredUsers=JSON.parse(localStorage.getItem("user")) || [];
+function createAdmin(){
+    if(registeredUsers.length===0){
+        registeredUsers.push({
+            userId:"B21DCCN611",
+            username:"admin",
+            email:"nnmhqn2003@gmail.com",
+            password:"1",
+            role:"admin"
+        })
+        localStorage.setItem("user",JSON.stringify(registeredUsers))
+    }
+}
 async function registerUser (userId,username, email, password) {
     var newUser = {
         userId: userId,
