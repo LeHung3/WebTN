@@ -1,11 +1,11 @@
 var registeredUsers=JSON.parse(localStorage.getItem("user")) || [];
-async function registerUser (userId,username, email, password) {
+async function registerUser (userId,username, email,role, password) {
     var newUser = {
         userId: userId,
         username: username,
         email: email,
         password: password,
-        role:"user"
+        role:role
     };
     await registeredUsers.push(newUser);
 }
@@ -31,22 +31,24 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     var userId=document.getElementById("registerUserId").value
     var username = document.getElementById("registerUsername").value;
     var email = document.getElementById("registerEmail").value;
+    var role=document.getElementById("role").value
     var password = document.getElementById("registerPassword").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
     if(password !== confirmPassword){
       alert("Passwords do not match. Please try again.");
       return;
     }
-    else if(!validateRegistration(userId,username,password)){
+    else if(!validateRegistration(userId,username,email)){
         alert("Account already exists.");
       return;
     }
     else{
         try {
-            registerUser(userId,username,email,password)
+            registerUser(userId,username,email,role,password)
             var jsonRegisteredUsers = JSON.stringify(registeredUsers);
             localStorage.setItem('user', jsonRegisteredUsers);
             alert("Registration successful!");
+            window.location.href="showUser.html"
             document.getElementById("registerUserId").value=""
             document.getElementById("registerUsername").value="";
             document.getElementById("registerEmail").value="";

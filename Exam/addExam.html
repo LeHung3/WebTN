@@ -6,6 +6,20 @@
   <title>Tạo Kỳ thi</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #switch-to-home a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #396804; /* Green background color */
+        color: white; /* White text color */
+        border-radius: 5px; /* Rounded corners */
+        text-decoration: none; /* Remove underline from link */
+    }
+    
+    #switch-to-home:hover a{
+        background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
 
@@ -36,6 +50,9 @@
       <button type="button" class="btn btn-primary" onclick="addQuestions()">Thêm câu hỏi</button>
       <button type="submit" class="btn btn-success">Lưu kỳ thi</button>
     </form>
+    <div id="switch-to-home" style="margin-top: 15px;">
+      <a href="../Exam/showExam.html">Xem danh sách bài thi</a>
+  </div> 
   </div>
 
   <script src="addExam.js"></script>

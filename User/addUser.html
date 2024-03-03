@@ -7,13 +7,13 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="addUser.css">
 </head>
 <body>
 
 <div class="container">
     <div class="">
-      <h2>Register</h2>
+      <h2 style="text-align: center;">Add user</h2>
       <form id="registerForm">
         <div class="form-group">
           <label for="registerUserId">UserId</label>
@@ -28,6 +28,13 @@
           <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" required>
         </div>
         <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="role" class="form-control" required>
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+            </select>
+        </div>
+        <div class="form-group">
           <label for="registerPassword">Password</label>
           <input type="password" class="form-control" id="registerPassword" placeholder="Password" required>
         </div>
@@ -35,8 +42,7 @@
           <label for="confirmPassword">Confirm Password</label>
           <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-        <p>Already have an account? <a href="/Bai3WebHTML/Login/login.html">Login here</a>.</p>
+        <button type="submit" class="btn btn-primary">Add</button>
       </form>
     </div>
 </div>
@@ -46,6 +52,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Custom JavaScript -->
-<script src="register.js"></script>
+<script src="addUser.js"></script>
 </body>
 </html>

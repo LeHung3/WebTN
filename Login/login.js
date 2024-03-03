@@ -1,11 +1,11 @@
 var registeredUsers = JSON.parse(localStorage.getItem('user')) || [];
 var userIdLoggedIn=""
-function checkLogin (username,password) {
+function checkLogin (userId,password) {
     if(registeredUsers===null){
         return false
     }
     for (var i = 0; i < registeredUsers.length; i++) {
-        if(username === registeredUsers[i].username && password === registeredUsers[i].password){
+        if(userId === registeredUsers[i].userId && password === registeredUsers[i].password){
             userIdLoggedIn=registeredUsers[i].userId
             return true
         }
@@ -15,9 +15,9 @@ function checkLogin (username,password) {
 
 document.getElementById("loginForm").addEventListener("submit", function(event){
     event.preventDefault(); // Prevent default form submission
-    var username = document.getElementById("loginUsername").value;
+    var userId = document.getElementById("loginUserId").value;
     var password = document.getElementById("loginPassword").value;
-    if(checkLogin(username,password)){
+    if(checkLogin(userId,password)){
         window.location.href = "../Home/home.html"
         localStorage.setItem("userLoggedIn",JSON.stringify({userId: userIdLoggedIn}))
     }

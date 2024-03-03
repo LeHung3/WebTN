@@ -1,4 +1,4 @@
-const exams=JSON.parse(localStorage.getItem("exam")) || []
+var exams=JSON.parse(localStorage.getItem("exam")) || []
 
 function toggleTimePicker() {
     var examType = document.getElementById('examType').value;

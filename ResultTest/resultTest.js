@@ -9,7 +9,6 @@ function countCorrectAnswer(){
   //lọc list user-exam theo userId
   var allExamByUserId = listUserExam.filter(function (object) {
     return object.userId === userId;
-    //return object.userId === 1;
   });
   //tìm examId theo exam cuối thêm vào list
   var examId  = JSON.parse(localStorage.getItem("examOnline")).examId
@@ -51,7 +50,6 @@ function showCorrectAnswers() {
   //lọc list user-exam theo userId
   var allExamByUserId = listUserExam.filter(function (object) {
     return object.userId === userId;
-    //return object.userId === 1;
   });
   //tìm examId theo exam cuối thêm vào list
   var examId  = JSON.parse(localStorage.getItem("examOnline")).examId
@@ -75,15 +73,34 @@ return exam.correctAnswer;
   var questionContainer = document.getElementById("questionResult");
 
   Questions.forEach(function(questionObj, index) {
+    questionContainer.appendChild(document.createElement("hr"));
     var questionElement = document.createElement("div");
     questionElement.classList.add("question");
     questionElement.classList.add("question-column");
 
 
-    var questionText = document.createElement("div");
-    questionText.textContent = "Ma cau hoi: "+questionObj.question;
+    var questionText = document.createElement("p");
+    questionText.classList.add("text-question");
+    questionText.textContent = "Câu hỏi " + (index+1) + " : "+ questionObj.question;
     questionElement.appendChild(questionText);
 
+    var answers = questionObj.answers; 
+    var choicesDiv = document.createElement("div");
+    choicesDiv.classList.add("answer");
+    choicesDiv.classList.add("answer-column");
+    Object.keys(answers).forEach(function (key, choiceIndex) {
+      var choice = answers[key];
+    
+      var choiceDiv = document.createElement("div");
+  
+      var choiceLabel = document.createElement("p");
+      choiceLabel.textContent = key +"." + choice; // Sử dụng value từ answers như là nội dung của label
+      // choiceLabel.htmlFor = choiceInput.id;
+      choiceDiv.appendChild(choiceLabel);
+    
+      choicesDiv.appendChild(choiceDiv);
+    });
+    questionElement.appendChild(choicesDiv);
     var answerElement = document.createElement("div");
     answerElement.classList.add("answer");
     answerElement.classList.add("answer-column");
@@ -100,6 +117,7 @@ return exam.correctAnswer;
 
     questionContainer.appendChild(questionElement);
   });
+  questionContainer.appendChild(document.createElement("hr"));
 }
 
 
@@ -121,9 +139,11 @@ function switchToHome(){
 }
 var userLogin = JSON.parse(localStorage.getItem("userLoggedIn"));
 var userId = userLogin.userId
+var examQuestion  = JSON.parse(localStorage.getItem("examOnline")).questions
 var  countScore = countCorrectAnswer()
 var  score = document.getElementById("studentId");
-  score.innerText = "Mã sinh viên :" + userId;
+  score.innerText = "Mã sinh viên : " + userId;
+  // score.innerText = "Mã sinh viên :";
 
 var  score = document.getElementById("score");
-  score.innerText = "Số câu hoàn thành :" + countScore;
+  score.innerText = "Số câu hoàn thành : " + countScore + "/" +examQuestion.length; 

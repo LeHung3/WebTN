@@ -1,0 +1,24 @@
+function generateListUser(){
+    var userDashboard = document.getElementById("UserDashBoard");    
+    var ListObjectUser = JSON.parse(localStorage.getItem("user"));
+    ListObjectUser.forEach(function(userOject,index) {       
+        var userInfo = document.createElement('div');
+        userInfo.classList.add('user-info');
+
+        var info = document.createElement('div');
+        info.classList.add("info");
+
+        var infoLabel = document.createElement('p');
+        infoLabel.textContent =userOject["userId"];
+
+        info.appendChild(infoLabel);
+        userInfo.appendChild(info); 
+
+        userInfo.addEventListener('click', function() {
+            window.location.href = 'editUser.html?userId='+userOject["userId"];
+        });
+        userDashboard.appendChild(userInfo);  
+    });
+}
+
+generateListUser()

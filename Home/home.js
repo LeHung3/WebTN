@@ -1,5 +1,5 @@
 const exams = JSON.parse(localStorage.getItem("exam")) || []
-
+localStorage.setItem("examOnline",JSON.stringify({}))
 function getItemExam(exam){
   const examInfo = document.createElement("div");
   examInfo.classList.add("exam-info");
@@ -31,8 +31,7 @@ function filterExams() {
   const searchInput = document.getElementById('searchInput').value.toLowerCase();
   const searchResults = document.getElementById('searchResults');
   searchResults.innerHTML = ''; // Xóa kết quả tìm kiếm trước đó
-  const matchingExams =exams.filter(exam => exam.examName.toLowerCase().includes(searchInput));
-
+  const matchingExams =exams.filter(exam => (exam.examName.toLowerCase().includes(searchInput) || exam.examType.toLowerCase().includes(searchInput)));
   if (matchingExams.length > 0 && searchInput!="") {
       matchingExams.forEach(exam => {
         searchResults.appendChild(getItemExam(exam));

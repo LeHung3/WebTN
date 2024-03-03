@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Show User</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom,#f7bab1 , #e7e0df);
+            margin: 0; /* Xóa margin mặc định */
+            padding: 0; /* Xóa padding mặc định */
+            width: 100%; /* Đặt chiều rộng là 100% */
+            height: 100vh; /* Đặt chiều cao là 100% của viewport */
+            overflow: auto; /* Cho phép cuộn nếu cần thiết */
+        }
+
+        #examDashBoard{
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #fae0c7, #4eb09b, #0c5776,#001c44);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #000000;
+            /* Màu chữ trắng */
+        }
+
+        .exam-info{
+            padding: 10px;
+            background-color: #f8dad0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #000000;
+        }
+
+        .info {
+            display: block;
+            padding: 5px;
+            background-color: #f8dad0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #000000;
+
+            /* Màu chữ trắng */
+        }
+
+        .info p{
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        p{
+            margin: 5px 0 0 0;
+        }
+
+        #switch-to-home a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #396804; /* Green background color */
+            color: white; /* White text color */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none; /* Remove underline from link */
+        }
+          
+        #switch-to-home:hover a{
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div id="examDashBoard">
+            <div> <h1>Danh sách bài thi</h1></div>
+        </div>
+        <div id="switch-to-home" style="text-align: center;">
+            <a href="../Dashboard/dashBoard.html">Về trang quản trị</a>
+        </div>
+    </div>
+    <script src='showExam.js'></script> 
+</body>
+</html>

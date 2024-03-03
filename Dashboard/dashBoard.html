@@ -17,53 +17,26 @@
             <ul>
                 <li onclick="toggleForm('form-exams')" style="cursor: pointer; margin-left: 20px;">Quản lý bài thi</li>
                 <div class="form-container" id="form-exams">
-                    <a href="../Exam/addExam.html" class="btn">Thêm</a>
-                    <a href="../Exam/editExam.html" class="btn">Sửa</a>
+                    <a href="../Exam/showExam.html" class="btn">Danh sách bài thi</a>
+                    <a href="../Exam/addExam.html" class="btn">Thêm bài thi</a>
                 </div>
                 <hr>
                 <li onclick="toggleForm('form-users')" style="cursor: pointer; margin-left: 20px;">Quản lý người dùng</li>
                 <div class="form-container" id="form-users">
-                    <a href="#" class="btn">Thêm</a>
-                    <a href="#" class="btn">Sửa</a>
+                    <a href="../User/showUser.html" class="btn">Danh sách người dùng</a>
+                    <a href="/Bai3WebHTML/User/addUser.html" class="btn">Thêm người dùng</a>
                 </div>
                 <hr>
-                <li onclick="toggleForm('form-statistic')" style="cursor: pointer; margin-left: 20px;">Thống kê</li>
+                <li onclick="toggleForm('form-statistic')" style="cursor: pointer; margin-left: 20px;">Thống kê kết quả</li>
                 <div class="form-container" id="form-statistic">
-                    <a href="../ResultOverview/index.html" class="btn">Kết quả bài thi</a>
-                    <a href="../StatisticPage/index.html" class="btn">Thống kê chung</a>
+                    <a href="../ResultOverview/index.html" class="btn">Theo bài thi</a>
+                    <a href="../StatisticPage/index.html" class="btn">Theo người dùng</a>
                 </div>
             </ul>
+            <a class="btn btn-success" href="../Home/home.html" style="margin-top: 15px; text-align: center;">Về trang chủ</a>
         </div>
-
-        <!-- Main content -->
-        <!-- <div class="main-content">
-            <h1>Bảng kết quả thi của các sinh viên</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Tên sinh viên</th>
-                        <th>Điểm số</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>85</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Trần Thị B</td>
-                        <td>78</td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-            <button class="btn">Xuất báo cáo</button>
-        </div> -->
     </div>
-
+    
     <script src="dashBoard.js"></script>
 </body>
 </html>
