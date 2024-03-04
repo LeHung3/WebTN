@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="home.js"></script>
+    
 </head>
 
 <body>
     <header>
         <div class="header-with-search">
             <div class="header__logo">
-                <img src="/Bai3WebHTML/assets/ptit.jpg" alt="PTIT Logo" onclick="window.location.reload()" class="custom-cursor">
+                <img src="../assets/ptit.jpg" alt="PTIT Logo" onclick="window.location.reload()" class="custom-cursor">
             </div>
             <div class="search-bar">
                 <input type="text" class="search-input" id="searchInput" placeholder="Search Exam">
@@ -25,7 +25,7 @@
             <div>
                 <button class="logout-button" id="adminButton" style="display: none;" onclick="adminPage()">Admin</button>
             </div>
-            <button class="logout-button" id="logOut" onclick="logOut()">Thoat</button>
+            <button class="logout-button" id="logOut" onclick="logOut()">Exit</button>
         </div>
     </header>
     <div class="container">
@@ -34,6 +34,7 @@
         <h1>Danh sách bài thi</h1>
         <div id="examList"></div>
     </div>
+    <script src="home.js"></script>
     <script>
         var user=JSON.parse(localStorage.getItem('user'))
         var loggedIn=JSON.parse(localStorage.getItem('userLoggedIn')).userId;

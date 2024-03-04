@@ -40,7 +40,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #a2d5ab;
@@ -49,6 +50,7 @@ th, td {
 th {
   background-color: #a2d5ab;
 }
+
 
 #exportExcel {
   display: block;
@@ -64,4 +66,33 @@ th {
 
 #exportExcel:hover {
   background-color: #45a049;
+}
+
+.button {
+  background-color: #f28076;
+  color: #000000;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: "🔜";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  text-decoration: none;
+  font-size: 30px;
+  background-color: #45a049;
+  /* 8ad879 */
+  transition: left 0.5s ease-in-out;
+}
+
+.button:hover::after {
+  left: 0;
+  transition: left 0.5s ease-in-out;
 }

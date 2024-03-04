@@ -27,3 +27,7 @@ function generateListExam(){
     });
 }
 generateListExam()
+
+function goToDashboard() {
+    window.location.href = "../Dashboard/dashBoard.html"
+}

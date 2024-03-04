@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div  class="sidebar">
             <h2 style="text-align: center;">Admin Dashboard</h2>
             <ul>
                 <li onclick="toggleForm('form-exams')" style="cursor: pointer; margin-left: 20px;">Quản lý bài thi</li>
@@ -21,22 +23,26 @@
                     <a href="../Exam/addExam.html" class="btn">Thêm bài thi</a>
                 </div>
                 <hr>
-                <li onclick="toggleForm('form-users')" style="cursor: pointer; margin-left: 20px;">Quản lý người dùng</li>
+                <li onclick="toggleForm('form-users')" style="cursor: pointer; margin-left: 20px;">Quản lý người dùng
+                </li>
                 <div class="form-container" id="form-users">
                     <a href="../User/showUser.html" class="btn">Danh sách người dùng</a>
-                    <a href="/Bai3WebHTML/User/addUser.html" class="btn">Thêm người dùng</a>
+                    <a href="../User/addUser.html" class="btn">Thêm người dùng</a>
                 </div>
                 <hr>
-                <li onclick="toggleForm('form-statistic')" style="cursor: pointer; margin-left: 20px;">Thống kê kết quả</li>
+                <li onclick="toggleForm('form-statistic')" style="cursor: pointer; margin-left: 20px;">Thống kê kết quả
+                </li>
                 <div class="form-container" id="form-statistic">
                     <a href="../ResultOverview/index.html" class="btn">Theo bài thi</a>
                     <a href="../StatisticPage/index.html" class="btn">Theo người dùng</a>
                 </div>
             </ul>
-            <a class="btn btn-success" href="../Home/home.html" style="margin-top: 15px; text-align: center;">Về trang chủ</a>
+            <a class="btn btn-success" href="../Home/home.html"
+                style="margin-left: 170px;margin-top: 15px; text-align: center;align-items: center;">Về trang chủ</a>
         </div>
     </div>
-    
+
     <script src="dashBoard.js"></script>
 </body>
+
 </html>

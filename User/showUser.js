@@ -9,8 +9,11 @@ function generateListUser(){
         info.classList.add("info");
 
         var infoLabel = document.createElement('p');
-        infoLabel.textContent =userOject["userId"];
+        infoLabel.textContent = 'ID: ' + userOject["userId"];
+        info.appendChild(infoLabel);
 
+        var infoLabel = document.createElement('p');
+        infoLabel.textContent ='Name: ' + userOject["username"];
         info.appendChild(infoLabel);
         userInfo.appendChild(info); 
 

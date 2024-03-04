@@ -33,7 +33,11 @@ function filterExams() {
   searchResults.innerHTML = ''; // Xóa kết quả tìm kiếm trước đó
   const matchingExams =exams.filter(exam => (exam.examName.toLowerCase().includes(searchInput) || exam.examType.toLowerCase().includes(searchInput)));
   if (matchingExams.length > 0 && searchInput!="") {
+      searchResults.innerHTML=`
+          <h1>Kết quả tìm kiếm</h1>
+      `
       matchingExams.forEach(exam => {
+        
         searchResults.appendChild(getItemExam(exam));
       });
   } else {

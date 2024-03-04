@@ -16,12 +16,18 @@
         <ul id="course-list">
             <!-- Danh sách môn học sẽ được tạo bằng JavaScript -->
         </ul>
+        <button class="button"  onclick="redirectToIndex()">Go to Dashboard</button>
     </div>
     <img src="https://code.ptit.edu.vn/2020/images/bg_right.png" 
         style="float:right; margin-right: 10px; width: 500px; height: 500px ">
      <img src="https://code.ptit.edu.vn/2020/images/bg_left.png" 
         style="float:left; margin-left: 10px ">
     <script src="../ResultOverview/index.js"></script>
+    <script>
+        function redirectToIndex() {
+            window.location.href = "../Dashboard/dashboard.html";
+        }
+    </script>
 </body>
 
 </html>

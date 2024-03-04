@@ -27,9 +27,7 @@ function deleteUser(){
 if(user){
     var userDetailsElement = document.getElementById("userDetails");
     userDetailsElement.innerHTML = `
-        <div>
-            <button onclick="deleteUser()" class="btn btn-danger custom-small-button">Delete</button>
-        </div>
+        
         <div class="form-group">
             <label for="username">UserId:</label>
             <input type="text" class="form-control" id="userId" value="${userId}" required readonly>
@@ -54,6 +52,10 @@ if(user){
                 <option value="admin" ${user.role==='admin'? 'selected':''}>admin</option>
             </select>
         </div>
+        <div>
+            <button onclick="deleteUser()" class="btn btn-danger custom-small-button">Delete</button>
+        </div>
+        <hr>
         <button type="button" class="btn btn-primary btn-sm" onclick="saveChanges()">Save Changes</button>
     `;
 }else{

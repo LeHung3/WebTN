@@ -41,6 +41,7 @@ if (exam) {
             </div>
             <button type="button" class="btn btn-primary custom-small-button" onclick="addQuestions()">Thêm câu hỏi</button>
             <hr>
+            <hr>
             <div class="form-group" id="questionContainer"></div>
             <button type="button" class="btn btn-success custom-small-button" onclick="submitExam()">Lưu thay đổi</button>
         </form>
@@ -73,6 +74,7 @@ if (exam) {
         var question = document.createElement('div');
         question.className = 'question-div';
         question.innerHTML = `
+        <hr>
         <div id="${exam.questions[i-1].questionId}">
             <div class="form-group">
                 <label for="question${i}">Mã câu: ${exam.questions[i-1].questionId}</label>
@@ -158,6 +160,7 @@ function addQuestions() {
         var question = document.createElement('div');
         question.className = 'question-div';
         question.innerHTML += `
+        <hr>
         <div class="form-group">
             <label for="questionId${i}">Mã câu:</label>
             <input type="text" id="questionId${i}" name="questionId${i}" class="form-control" required>
