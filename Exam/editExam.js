@@ -10,7 +10,6 @@ var exam = exams.find(function(item) {
 var examDetailsContainer = document.getElementById('examDetails');
 if (exam) {
     examDetailsContainer.innerHTML = `
-
         <form id="editExamForm">
             <div>
                 <button type="button" onclick="deleteExam()" class="btn btn-danger custom-small-button">Xóa bài thi</button>
@@ -39,9 +38,7 @@ if (exam) {
                 <label for="questionCount">Số câu hỏi:</label>
                 <input type="number" class="form-control" id="questionCount" min="1" value="${exam.questions.length}">
             </div>
-            <button type="button" class="btn btn-primary custom-small-button" onclick="addQuestions()">Thêm câu hỏi</button>
-            <hr>
-            <hr>
+            <button type="button" class="btn btn-primary custom-small-button" onclick="addQuestions()" id="addQuestion">Thêm câu hỏi</button>
             <div class="form-group" id="questionContainer"></div>
             <hr>
             <button type="button" class="btn btn-success custom-small-button" onclick="submitExam()">Lưu thay đổi</button>
@@ -75,7 +72,6 @@ if (exam) {
         var question = document.createElement('div');
         question.className = 'question-div';
         question.innerHTML = `
-        <hr>
         <div id="${exam.questions[i-1].questionId}">
             <hr>
             <div class="form-group">
@@ -258,7 +254,13 @@ function saveExam(addExam){
         var jsonExams = JSON.stringify(exams);
         localStorage.setItem('exam', jsonExams);
         alert("Save change successfully!")
+        window.location.href="showExam.html"
     } catch (error) {
         alert(error.message)
     }
 }
+
+document.getElementById('addQuestion').addEventListener('click', function() {
+    document.getElementById('addQuestion').disabled=true
+    document.getElementById('questionCount').disabled=true
+});

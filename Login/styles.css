@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('https://img5.thuthuatphanmem.vn/uploads/2021/11/10/hinh-nen-tao-cam-hung-hoc-tap-cham-chi_075113092.jpg');
+  background-image: url('../assets/bg-login.jpg');
   background-size: cover;
   background-position: top center;
   /* Đặt ảnh nền ở trên cùng và giữa */

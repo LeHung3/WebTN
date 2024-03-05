@@ -185,5 +185,7 @@ document.getElementById('fileInput').addEventListener('click', function() {
 document.getElementById('addQuestion').addEventListener('click', function() {
     var fileInput = document.getElementById('fileInput');
     fileInput.disabled = true;
+    document.getElementById('addQuestion').disabled=true
+    document.getElementById('questionCount').disabled=true
 });
 
