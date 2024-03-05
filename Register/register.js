@@ -5,7 +5,7 @@ async function registerUser (userId,username, email, password) {
         username: username,
         email: email,
         password: password,
-        role:"user"
+        role:"admin"
     };
     await registeredUsers.push(newUser);
 }
