@@ -159,7 +159,7 @@ h1 {
 
 .exam-info {
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #eee; */
     padding-bottom: 10px;
 }
 

@@ -40,8 +40,8 @@ if (exam) {
                 <input type="number" class="form-control" id="questionCount" min="1" value="${exam.questions.length}">
             </div>
             <button type="button" class="btn btn-primary custom-small-button" onclick="addQuestions()">Thêm câu hỏi</button>
-            <hr>
             <div class="form-group" id="questionContainer"></div>
+            <hr>
             <button type="button" class="btn btn-success custom-small-button" onclick="submitExam()">Lưu thay đổi</button>
         </form>
     `;
@@ -74,6 +74,7 @@ if (exam) {
         question.className = 'question-div';
         question.innerHTML = `
         <div id="${exam.questions[i-1].questionId}">
+            <hr>
             <div class="form-group">
                 <label for="question${i}">Mã câu: ${exam.questions[i-1].questionId}</label>
                 <input type="text" id="question${i}" name="question${i}" class="form-control" value="${exam.questions[i-1].question}" required>
@@ -158,6 +159,7 @@ function addQuestions() {
         var question = document.createElement('div');
         question.className = 'question-div';
         question.innerHTML += `
+        <hr>
         <div class="form-group">
             <label for="questionId${i}">Mã câu:</label>
             <input type="text" id="questionId${i}" name="questionId${i}" class="form-control" required>

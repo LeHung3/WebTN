@@ -47,6 +47,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
             var jsonRegisteredUsers = JSON.stringify(registeredUsers);
             localStorage.setItem('user', jsonRegisteredUsers);
             alert("Registration successful!");
+            window.location.href="../Login/login.html"
             document.getElementById("registerUserId").value=""
             document.getElementById("registerUsername").value="";
             document.getElementById("registerEmail").value="";
