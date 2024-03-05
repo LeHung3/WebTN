@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +10,59 @@
     <!-- Link to Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        .custom-small-button {
-            font-size: 18px;
-            padding: 4px 8px;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(220, 220, 220, 0.9));
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        body {
+            background-image: url(../assets/dashboard.jpg);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #userDetails {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(220, 220, 220, 0.9));
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #switch-to-home {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #switch-to-home a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #21da74;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #switch-to-home a:hover {
+            background-color: #09801b;
+        }
     </style>
 </head>
+
 <body>
     <div class="container mt-5">
         <h2>Edit User</h2>
         <div id="userDetails" class="mt-4"></div>
         <div id="switch-to-home" style="margin-top: 10px;">
             <a href="../User/showUser.html">Xem danh sách người dùng</a>
-        </div> 
+        </div>
     </div>
 
     <!-- Link to Bootstrap JS and jQuery -->
@@ -32,4 +72,5 @@
     <!-- Link to Custom JavaScript -->
     <script src="editUser.js"></script>
 </body>
+
 </html>

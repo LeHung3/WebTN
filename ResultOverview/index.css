@@ -19,11 +19,11 @@ ul {
 
 li {
   margin: 10px;
-    background-color: #f28076;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  background-color: #f28076;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 li:hover {
@@ -52,14 +52,61 @@ a:hover {
   border-radius: #666;
   /* Áp dụng hiệu ứng blur */
 }
+
 #course-list {
-  width: 100%; /* Đặt chiều rộng */
-  display: flex; /* Hiển thị các ô môn học theo hàng ngang */
-  flex-wrap: wrap; /* Cho phép các ô môn học xuống dòng nếu không đủ không gian */
-  justify-content: center; /* Canh giữa các ô môn học theo chiều ngang */
+  width: 100%;
+  /* Đặt chiều rộng */
+  display: flex;
+  /* Hiển thị các ô môn học theo hàng ngang */
+  flex-wrap: wrap;
+  /* Cho phép các ô môn học xuống dòng nếu không đủ không gian */
+  justify-content: center;
+  /* Canh giữa các ô môn học theo chiều ngang */
 }
 
 #logo {
   margin-bottom: 10px;
   /* Khoảng cách giữa logo và chữ "Exam List" */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  /* Màu nền */
+  color: white;
+  /* Màu chữ */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  /* Bo tròn các góc */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Hiệu ứng màu nền khi hover */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: "🔙";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #4CAF50;
+  color: #000;
+  text-decoration: none;
+  font-size: 30px;
+  border-radius: 5px;
+  /* 8ad879 */
+  transition: left 0.5s ease-in-out;
+}
+
+.button:hover::after {
+  left: 0;
+  transition: left 0.5s ease-in-out;
 }

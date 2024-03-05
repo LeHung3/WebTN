@@ -53,6 +53,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
             document.getElementById("registerEmail").value="";
             document.getElementById("registerPassword").value="";
             document.getElementById("confirmPassword").value="";
+            window.location.href='../Login/login.html'
         } catch (error) {
             alert(error.message)
         }
