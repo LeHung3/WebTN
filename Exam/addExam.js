@@ -180,7 +180,7 @@ function questionsCSVToJSON(csvData) {
 document.getElementById('fileInput').addEventListener('click', function() {
     var addQuestion = document.getElementById('addQuestion');
     addQuestion.disabled = true;
-    document.getElementById('questionCount')
+    document.getElementById('questionCount').disabled=true
 });
 
 document.getElementById('addQuestion').addEventListener('click', function() {
