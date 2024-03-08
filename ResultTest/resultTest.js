@@ -60,14 +60,14 @@ function showCorrectAnswers() {
     return exam.examId === examId;
   })
 
-var Questions = objectExam.questions;
-var listObjectAnswers = allExamByUserId[allExamByUserId.length - 1].answers;
-var selectedAnswer  = listObjectAnswers.map(function(answer){
-return answer.yourAnswer;
-})
-var correctAnswer = objectExam.questions.map(function(exam) {
-return exam.correctAnswer;
-});
+  var Questions = objectExam.questions;
+  var listObjectAnswers = allExamByUserId[allExamByUserId.length - 1].answers;
+  var selectedAnswer  = listObjectAnswers.map(function(answer){
+  return answer.yourAnswer;
+  })
+  var correctAnswer = objectExam.questions.map(function(exam) {
+  return exam.correctAnswer;
+  });
 
 
   var questionContainer = document.getElementById("questionResult");
@@ -110,7 +110,7 @@ return exam.correctAnswer;
     answerElement.appendChild(correctAnswerText);
 
     var userAnswerText = document.createElement("p");
-    userAnswerText.textContent = "Câu trả lời của bạn: " + selectedAnswer[index];
+    userAnswerText.textContent = "Câu trả lời của bạn: " + selectedAnswer[index] + (correctAnswer[index]==selectedAnswer[index]? ' ✅' : ' ❌');
     answerElement.appendChild(userAnswerText);
 
     questionElement.appendChild(answerElement);

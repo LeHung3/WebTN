@@ -4,6 +4,11 @@ function generateListUser(){
     ListObjectUser.forEach(function(userOject,index) {       
         var userInfo = document.createElement('div');
         userInfo.classList.add('user-info');
+        if(userOject["userId"]==JSON.parse(localStorage.getItem("userLoggedIn")).userId){
+            userInfo.classList.add("accountOwner")
+        }else{
+            userInfo.classList.add("otherAccount")
+        }
 
         var info = document.createElement('div');
         info.classList.add("info");

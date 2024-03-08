@@ -17,8 +17,13 @@ function deleteUser(){
     try {
         var jsonUsers = JSON.stringify(users);
         localStorage.setItem('user', jsonUsers);
-        alert("Delete successfully!")
-        window.location.href="../User/showUser.html"
+        if(userId==JSON.parse(localStorage.getItem("userLoggedIn")).userId){
+            alert("Your account has just been deleted")
+            window.location.href="../index.html"
+        }else{
+            alert("Delete successfully!")
+            window.location.href="../User/showUser.html"
+        }
     } catch (error) {
         alert(error.message)
     }

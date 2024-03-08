@@ -6,34 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
 </head>
 
 <body>
     <header>
-        <div class="header-with-search">
+        <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="header__logo">
                 <img src="../assets/ptit.jpg" alt="PTIT Logo" onclick="window.location.reload()" class="custom-cursor">
             </div>
-            <div class="search-bar">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search Exam">
-                <div class="header__search-selection">
-                    <i class="fa-solid fa-angle-down"></i>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search Exam" aria-label="Search" id="searchInput">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit" onclick="filterExams(event)">Search</button>
+                    </form>
+                </ul>
+                <li class="nav-item active" style="display: none;" id="adminButton" >
+                    <a class="nav-link custom-cursor" onclick="adminPage()" style="color: azure;">Admin</a>
+                </li>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       style="color: azure;">
+                        Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../Profile/profile.html">Profile</a>
+                        <a class="dropdown-item custom-cursor" onclick="logOut()">Logout</a>
+                    </div>
                 </div>
             </div>
-            <button class="search-button" id="button-addon2" onclick="filterExams()">Search</button>
-            <div>
-                <button class="logout-button" id="adminButton" style="display: none;" onclick="adminPage()">Admin</button>
-            </div>
-            <button class="logout-button" id="logOut" onclick="logOut()">Exit</button>
-        </div>
+        </nav>
     </header>
+
     <div class="container">
         <div id="searchResults"></div>
-        <hr>
         <h1>Danh sách bài thi</h1>
         <div id="examList"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="home.js"></script>
     <script>
         var user=JSON.parse(localStorage.getItem('user'))

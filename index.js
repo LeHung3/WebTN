@@ -2,7 +2,7 @@ function createData() {
     createUser()
     createExam()
 }
-
+localStorage.setItem("userLoggedIn",JSON.stringify({}))
 function createUser(){
     var users=JSON.parse(localStorage.getItem("user")) || [];
     if(users.length===0){
@@ -63,7 +63,7 @@ function createUser(){
             role:"user"
         })
         users.push({
-            userId:"B21DCCN004",
+            userId:"B21DCCN005",
             username:"moi",
             email:"moi@gmail.com",
             password:"123",

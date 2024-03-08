@@ -2,7 +2,7 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #f28076, #ffb6af, #fae0c7, #fbc193, #4eb09b);
+  background: linear-gradient(to bottom, #f3c1bd, #f8dad0);
   /* background: linear-gradient(to bottom, #e68a8c, #e7e0c4, #dbd468, #89b449, #407f3e); */
 }
 
@@ -10,7 +10,7 @@ body {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background: linear-gradient(to bottom, #e7e0c4,#407f3e, #89b449, #dbd468, #e68a8c);
+  background: linear-gradient(to bottom, #e7e0c4,#92c790, #89b449, #dbd468, #e68a8c);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

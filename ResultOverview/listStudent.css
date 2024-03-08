@@ -2,14 +2,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #f8dad0, #ffb6af, #2d99ae, #0c5776, #001c44);
+  background: linear-gradient(to bottom, #f3c1bd, #f8dad0);
 }
 
 .container {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background: linear-gradient(to bottom, #fae0c7, #4eb09b, #0c5776,#001c44);
+  background: linear-gradient(to bottom, #f1c69e, #4eb09b, #2f7fa1,#3f6eb1);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -26,7 +26,7 @@ h1 {
 
 .student-item {
   padding: 10px;
-  background-color: #f8dad0;
+  background-color: #ebd3cb;
   border-radius: 5px;
   margin-bottom: 10px;
   cursor: pointer;

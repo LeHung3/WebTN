@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-function filterExams() {
+function filterExams(event) {
+  event.preventDefault()
   const searchInput = document.getElementById('searchInput').value.toLowerCase();
   const searchResults = document.getElementById('searchResults');
   searchResults.innerHTML = ''; // Xóa kết quả tìm kiếm trước đó
@@ -37,9 +38,9 @@ function filterExams() {
           <h1>Kết quả tìm kiếm</h1>
       `
       matchingExams.forEach(exam => {
-        
         searchResults.appendChild(getItemExam(exam));
       });
+      searchResults.innerHTML+=`<hr>`
   } else {
       const noResultsMessage = document.createElement('p');
       noResultsMessage.textContent = 'Không tìm thấy kì thi phù hợp';

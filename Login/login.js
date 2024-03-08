@@ -1,4 +1,5 @@
 var registeredUsers = JSON.parse(localStorage.getItem('user')) || [];
+localStorage.setItem("userLoggedIn",JSON.stringify({}))
 var userIdLoggedIn=""
 function checkLogin (userId,password) {
     if(registeredUsers===null){
@@ -25,3 +26,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
         alert("Invalid username or password. Please try again.")
     }
 });
+
+document.getElementById("forgotPassword").addEventListener("click",function(e){
+    alert("Kiểm tra email để lấy lại mật khẩu.")
+})

@@ -2,40 +2,25 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('../assets/bg-login.jpg');
+  background-image: url('../assets/bg-login.PNG');
   background-size: cover;
   background-position: top center;
-  /* Đặt ảnh nền ở trên cùng và giữa */
-  /* background-position: center; */
 }
 
 #registerForm {
   max-width: 400px;
-  margin: 0 auto;
+  margin-top: 30px;
+  margin-left: 38%;
   padding: 20px;
   background-color:rgba(216, 189, 219, 0.9);
-  /* Màu nền trắng với độ trong suốt 90% */
   border: 1px solid rgba(220, 220, 220, 0.9);
-  /* Viền bo góc màu xám nhạt với độ trong suốt 90% */
   border-radius: 8px;
-  /* Bo góc */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  /* Hiệu ứng bóng */
 }
 form {
   display: flex;
   flex-direction: column;
 }
-
-/* .container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(220, 220, 220, 0.9));
-} */
 
 /* Cách nhau dưới */
 .container > * {
@@ -80,11 +65,9 @@ button {
   overflow: hidden;
 }
 
-
 button:hover {
   background-color: #0056b3;
 }
-
 
 .button::after {
   content: "🔜";
@@ -104,7 +87,6 @@ button:hover {
   left: 0;
   transition: left 0.5s ease-in-out;
 }
-
 
 a {
   text-decoration: none;
