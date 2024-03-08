@@ -5,6 +5,7 @@ body {
   background-image: url('https://img5.thuthuatphanmem.vn/uploads/2021/11/10/hinh-nen-tao-cam-hung-hoc-tap-cham-chi_075113092.jpg');
   background-size: cover;
   background-position: top center;
+  width: 100%; height: auto;
   /* Đặt ảnh nền ở trên cùng và giữa */
   /* background-position: center; */
 }

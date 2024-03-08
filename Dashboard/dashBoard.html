@@ -5,44 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
 </head>
 
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div  class="sidebar">
-            <h2 style="text-align: center;">Admin Dashboard</h2>
-            <ul>
-                <li onclick="toggleForm('form-exams')" style="cursor: pointer; margin-left: 20px;">Quản lý bài thi</li>
-                <div class="form-container" id="form-exams">
-                    <a href="../Exam/showExam.html" class="btn">Danh sách bài thi</a>
-                    <a href="../Exam/addExam.html" class="btn">Thêm bài thi</a>
-                </div>
-                <hr>
-                <li onclick="toggleForm('form-users')" style="cursor: pointer; margin-left: 20px;">Quản lý người dùng
-                </li>
-                <div class="form-container" id="form-users">
-                    <a href="../User/showUser.html" class="btn">Danh sách người dùng</a>
-                    <a href="../User/addUser.html" class="btn">Thêm người dùng</a>
-                </div>
-                <hr>
-                <li onclick="toggleForm('form-statistic')" style="cursor: pointer; margin-left: 20px;">Thống kê kết quả
-                </li>
-                <div class="form-container" id="form-statistic">
-                    <a href="../ResultOverview/index.html" class="btn">Theo bài thi</a>
-                    <a href="../StatisticPage/index.html" class="btn">Theo người dùng</a>
-                </div>
-            </ul>
-            <a class="btn btn-success" href="../Home/home.html"
-                style="margin-left: 170px;margin-top: 15px; text-align: center;align-items: center;">Về trang chủ</a>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="sidebar-logo">
+            <img src="../assets/ptit.jpg" alt="Logo" width="150">
         </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="toggleForm('manageStudentsSubMenu')">Quản lý sinh viên</a>
+                <ul class="nav flex-column ml-3 submenu" id="manageStudentsSubMenu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Danh sách sinh viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thêm người dùng</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="toggleForm('manageExamsSubMenu')">Quản lý bài thi</a>
+                <ul class="nav flex-column ml-3 submenu" id="manageExamsSubMenu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="showExamContent" onclick="showExam()">Danh sách bài
+                            thi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="addExamContent">Thêm bài thi</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Thống kê kết quả</a>
+            </li>
+        </ul>
     </div>
 
-    <script src="dashBoard.js"></script>
+    <!-- Page content -->
+    <div id="content">
+        <!-- Main content area -->
+        <div class="container">
+            <h2>Dashboard</h2>
+            <p>Welcome to the admin dashboard.</p>
+        </div>
+        <div id="examDashBoard" style="display: none;">
+            <h1>Danh sách bài thi</h1>
+        </div>
+        <div id="addExam" class="container mt-5" style="display: none;">
+            <h2>Tạo kỳ thi</h2>
+            <form id="examForm">
+              <div class="form-group">
+                <label for="examName">Tên kỳ thi:</label>
+                <input type="text" class="form-control" id="examName" required>
+              </div>
+              <div class="form-group">
+                <label for="description">Mô tả:</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="examType">Loại kỳ thi:</label>
+                <select class="form-control" id="examType" onchange="toggleTimePicker()">
+                  <option value="Free-access">Free-access</option>
+                  <option value="Scheduled">Scheduled</option>
+                </select>
+              </div>
+              <div class="form-group" id="timePickerContainer"></div>
+        
+              <div class="form-group">
+                  <label for="fileInput">Chọn tệp định dạng .xlsx:</label>
+                  <input type="file" class="form-control-file" id="fileInput" accept=".xlsx">
+              </div>
+              <hr>
+              <div class="form-group">
+                <label for="questionCount">Số câu hỏi:</label>
+                <input type="number" class="form-control" id="questionCount" min="1" value="1">
+              </div>
+              <button type="button" class="btn btn-primary" onclick="addQuestions()" id="addQuestion">Thêm câu hỏi</button>
+              <div class="form-group" id="questionContainer"></div>
+              <hr>
+              <button type="submit" class="btn btn-success">Lưu kỳ thi</button>
+            </form>
+            <div id="switch-to-home" style="margin-top: 15px;">
+              <a href="../Exam/showExam.html">Xem danh sách bài thi</a>
+            </div> 
+          </div>
+    </div>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="dashBoard.js">
+    </script>
 </body>
 
 </html>

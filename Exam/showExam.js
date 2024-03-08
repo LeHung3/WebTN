@@ -23,7 +23,7 @@ function generateListExam(){
         examInfo.addEventListener('click', function() {
             window.location.href = 'editExam.html?examId='+examOject["examId"];
         });
-        examDashboard.appendChild(examInfo);  
+        examDashboard.appendChild(examInfo);
     });
 }
 generateListExam()
