@@ -1,6 +1,7 @@
 body {
-  background-color: #f0d8d8;
+  background-color: #c8dff5;
   padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -8,6 +9,7 @@ body {
   margin: 0 auto;
   justify-items: center;
   align-items: center;
+  border-radius: 8px;
 }
 
 .profile {
@@ -30,3 +32,55 @@ body {
   display: flex;
   justify-content: center;
 }
+
+
+.split-container {
+  height: 100%;
+  display: flex;
+}
+
+.split {
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left {
+  width: 40%;
+  background-color: #f1f1f1;
+
+  overflow-y: auto;
+}
+
+.right {
+  margin-left: 20px;
+  border-radius: 8px;
+  width: 60%;
+  background-color: #f1f1f1;
+}
+
+
+.container1 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+.exam {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #141313;
+  border-radius: 5px;
+  background-color: #e9c0c0;
+}
+
+.exam h2 {
+  margin-top: 0;
+}
+
+.exam p {
+  margin: 5px 0;
+}
+

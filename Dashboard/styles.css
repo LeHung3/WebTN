@@ -1,88 +1,80 @@
-/* Reset CSS */
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* background-color: #f28076; */
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.sidebar-logo {
+  width: 150px;
+  /* Kích thước ảnh */
+  height: 150px;
+  /* Kích thước ảnh */
+  border-radius: 50%;
+  /* Độ cong của các góc, 50% sẽ tạo thành hình tròn */
+  overflow: hidden;
+  /* Ẩn các phần vượt ra khỏi khu vực hình tròn */
+}
+
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ab1a1a;
+  padding: 30px;
   height: 100%;
-  background-image: url(../assets/dashboard.jpg);
 }
 
-/* Main container styling */
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  height: 100%;
-}
-
-/* Sidebar styling */
-.sidebar {
-  width: 500px;
-  background: linear-gradient(#ffb6af, #fae0c7, #fbc193);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Main content styling */
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-/* Table styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
+#sidebar .sidebar-logo {
+  text-align: center;
   margin-bottom: 20px;
 }
 
-th,
-td {
+.content {
+  margin-left: 250px;
+}
+
+.nav-item {
+  color: #ab1a1a
+}
+
+.chart {
+  width: 400px;
+  height: 300px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  width: 20px;
+  height: 200px;
+  /* Chiều cao của cột, có thể thay đổi tùy ý */
+  background: #007bff;
+  /* Màu của cột */
+  position: absolute;
+  bottom: 0;
+}
+
+.label {
+  text-align: center;
+}
+
+.dropdown {
+  margin-bottom: 5px;
+}
+
+.dropdown-item {
+  background-color: #ffffff;
+  color: #ab1a1a;
+}
+
+.btn.btn-secondary.dropdown-toggle {
+  background-color: #ffffff;
+  /* Đặt màu nền */
+  color: #ab1a1a;
+  /* Đặt màu chữ */
+  border-color: #000000;
+  /* Đặt màu viền */
   padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #f28076;
-  color: #fff;
-}
-
-/* Button styling */
-.btn {
-  padding: 10px 20px;
-  background-color: #f28076;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-right: 10px;
-  align-items: center;
-}
-
-.btn:hover {
-  background-color: #f28076;
-}
-
-/* Form styling */
-.form-container {
-  display: none;
-  margin-top: 10px;
-}
-
-.form-container a {
-  display: block;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 20px;
-  background-color: #964ec2;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.form-container a:hover {
-  background-color: #f28076;
 }

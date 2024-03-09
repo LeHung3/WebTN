@@ -83,10 +83,41 @@ h1 {
   transition: left 0.5s ease-in-out;
 }
 
+.search-button {
+  background-color: #50c146;
+  color: #000000;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+}
+
+.search-button::after {
+  content: "🔍";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #6aea56;
+  font-size: 23px;
+  /* 8ad879 */
+  transition: left 0.5s ease-in-out;
+}
+
+.search-button:hover::after {
+  left: 0;
+  transition: left 0.5s ease-in-out;
+}
+
+
 .custom-cursor {
   cursor: pointer;
 }
 
 .custom-navbar {
-  background-color: #e3342f; /* Màu cam */
+  background-color: #ab1a1a;
+  /* Màu cam */
 }

@@ -42,3 +42,45 @@ function saveChange(){
   alert("Save successfully!")
   window.location.href="../Home/home.html"
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+  var examsData = []
+  const userExams=JSON.parse(localStorage.getItem("user-exam")) || []
+  const exams=JSON.parse(localStorage.getItem("exam")) || []
+  userExams.forEach(userExam=>{
+    if(userExam.userId==userId.userId){
+      var selectedAnswers=userExam.answers
+      var exam=exams.find(exam=>exam.examId==userExam.examId)
+      var name=exam.examName
+      var description=exam.description
+      var correctAnswers=0
+      var totalQuestions=exam.questions.length
+      console.log(exam.examName)
+      console.log(selectedAnswers)
+      console.log(exam.questions)
+      for(var i=0;i<totalQuestions;i++){
+        if(selectedAnswers[i].yourAnswer==exam.questions[i].correctAnswer){
+          correctAnswers++
+        }
+      }
+      var examData={
+        name:name,
+        description:description,
+        correctAnswers:correctAnswers,
+        totalQuestions:totalQuestions
+      }
+      examsData.push(examData)
+    }
+  })
+  const examsListElement = document.getElementById('examsList');
+  examsData.forEach(exam => {
+    const examElement = document.createElement('div');
+    examElement.classList.add('exam');
+    examElement.innerHTML = `
+      <h2>${exam.name}</h2>
+      <p>Description: ${exam.description}</p>
+      <p>Correct Answers: ${exam.correctAnswers}/${exam.totalQuestions}</p>
+    `;
+    examsListElement.appendChild(examElement);
+  });
+})
