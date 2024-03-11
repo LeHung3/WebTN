@@ -121,3 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.URL.revokeObjectURL(url);
     }
 });
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

@@ -30,3 +30,7 @@ function generateListUser(){
 }
 
 generateListUser()
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

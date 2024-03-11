@@ -59,3 +59,8 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         }
     }
 });
+
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

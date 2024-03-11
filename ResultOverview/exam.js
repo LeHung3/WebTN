@@ -62,3 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
   scoreElement.textContent = `Your Score: ${score*2}/20`;
   questionList.insertBefore(scoreElement, questionList.firstChild);
 });
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

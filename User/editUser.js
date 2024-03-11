@@ -97,3 +97,6 @@ function saveChanges() {
         userDetailsElement.innerHTML = "<p>No user data found.</p>";
     }
 }
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

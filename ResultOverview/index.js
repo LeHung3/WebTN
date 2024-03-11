@@ -27,3 +27,7 @@ const courses = [
   
   // Gọi hàm để tạo danh sách môn học khi trang được tải
   document.addEventListener('DOMContentLoaded', createCourseList);
+
+function returnHome(){
+  window.location.href="../Dashboard/dashBoard.html"
+}

@@ -31,3 +31,7 @@ generateListExam()
 function goToDashboard() {
     window.location.href = "../Dashboard/dashBoard.html"
 }
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

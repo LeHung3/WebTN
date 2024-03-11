@@ -110,3 +110,74 @@ a:hover {
   left: 0;
   transition: left 0.5s ease-in-out;
 }
+.sidebar-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  }
+
+  #sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ab1a1a;
+  padding: 30px;
+  height: 100%;
+  }
+
+  #sidebar .sidebar-logo {
+  text-align: center;
+  margin-bottom: 20px;
+  }
+
+  .content {
+  margin-left: 250px;
+  }
+
+  .nav-item {
+  color: #ab1a1a
+  }
+
+  .chart {
+  width: 400px;
+  height: 300px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+  }
+
+  .bar {
+  width: 20px;
+  height: 200px;
+  /* Chiều cao của cột, có thể thay đổi tùy ý */
+  background: #007bff;
+  /* Màu của cột */
+  position: absolute;
+  bottom: 0;
+  }
+
+  .label {
+  text-align: center;
+  }
+
+  .dropdown {
+  margin-bottom: 5px;
+  }
+
+  .dropdown-item {
+  background-color: #ffffff;
+  color: #ab1a1a;
+  }
+
+  .btn.btn-secondary.dropdown-toggle {
+  background-color: #ffffff;
+  /* Đặt màu nền */
+  color: #ab1a1a;
+  /* Đặt màu chữ */
+  border-color: #000000;
+  /* Đặt màu viền */
+  padding: 10px;
+  }

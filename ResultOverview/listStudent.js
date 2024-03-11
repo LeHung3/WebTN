@@ -61,3 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Populate student list on page load
   populateStudentList();
 });
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

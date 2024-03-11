@@ -264,3 +264,7 @@ document.getElementById('addQuestion').addEventListener('click', function() {
     document.getElementById('addQuestion').disabled=true
     document.getElementById('questionCount').disabled=true
 });
+
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}

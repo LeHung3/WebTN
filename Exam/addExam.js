@@ -60,22 +60,7 @@ function addQuestions() {
         questionDiv.appendChild(question)
         questionContainer.appendChild(questionDiv);
     }
-    var questionsLocal=[]
-    for (var i = 1; i <= questionCount; i++) {
-        var question = {
-            questionId: i,
-            question: document.getElementById(`question${i}`).value,
-            answers: {
-                A: document.getElementById(`answer${i}A`).value,
-                B: document.getElementById(`answer${i}B`).value,
-                C: document.getElementById(`answer${i}C`).value,
-                D: document.getElementById(`answer${i}D`).value
-            },
-            correctAnswer: document.getElementById(`correctAnswer${i}`).value
-        };
-        questionsLocal.push(question);
-    }
-    questions=questionsLocal
+    
 }
 
 document.getElementById('examForm').addEventListener('submit', function(event) {
@@ -94,6 +79,23 @@ document.getElementById('examForm').addEventListener('submit', function(event) {
         openTime = document.getElementById('examTime').value
     } catch (error) {
         openTime=null
+    }
+    if(questions.length==0){
+        var questionCount = parseInt(document.getElementById('questionCount').value);
+        for (var i = 1; i <= questionCount; i++) {
+            var question = {
+                questionId: i,
+                question: document.getElementById(`question${i}`).value,
+                answers: {
+                    A: document.getElementById(`answer${i}A`).value,
+                    B: document.getElementById(`answer${i}B`).value,
+                    C: document.getElementById(`answer${i}C`).value,
+                    D: document.getElementById(`answer${i}D`).value
+                },
+                correctAnswer: document.getElementById(`correctAnswer${i}`).value
+            };
+            questions.push(question);
+        }
     }
     var addExam={
         examId:examId,
@@ -190,3 +192,6 @@ document.getElementById('addQuestion').addEventListener('click', function() {
     document.getElementById('questionCount').disabled=true
 });
 
+function returnHome(){
+    window.location.href="../Dashboard/dashBoard.html"
+}
