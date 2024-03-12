@@ -69,47 +69,12 @@ a:hover {
   /* Khoảng cách giữa logo và chữ "Exam List" */
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  /* Màu nền */
-  color: white;
-  /* Màu chữ */
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
-  /* Bo tròn các góc */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  /* Hiệu ứng màu nền khi hover */
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.button::after {
-  content: "🔙";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 100%;
-  background-color: #4CAF50;
-  color: #000;
-  text-decoration: none;
-  font-size: 30px;
-  border-radius: 5px;
-  /* 8ad879 */
-  transition: left 0.5s ease-in-out;
-}
 
 .button:hover::after {
   left: 0;
   transition: left 0.5s ease-in-out;
 }
+
 .sidebar-logo {
   width: 150px;
   height: 150px;
@@ -147,16 +112,6 @@ a:hover {
   border: 1px solid #ccc;
   overflow: hidden;
   position: relative;
-  }
-
-  .bar {
-  width: 20px;
-  height: 200px;
-  /* Chiều cao của cột, có thể thay đổi tùy ý */
-  background: #007bff;
-  /* Màu của cột */
-  position: absolute;
-  bottom: 0;
   }
 
   .label {
